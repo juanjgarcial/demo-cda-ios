@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <AFNetworking/AFNetworking.h>
 
-@interface MapsViewController : UIViewController
+#import "ServiceResponse.h"
+#import "DashboardViewController.h"
+
+@interface MapsViewController : UIViewController <MKMapViewDelegate>
 
 @end

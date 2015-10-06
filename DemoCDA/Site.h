@@ -10,7 +10,8 @@
 
 @interface Site : JSONModel
 
-@property (nonatomic, retain) NSString *eTitle;
-@property (nonatomic, retain) NSString *eHiperlink;
+@property NSString *eTitle;
+@property NSString *eHiperlink;
+@property BOOL pActive;
 
 @end

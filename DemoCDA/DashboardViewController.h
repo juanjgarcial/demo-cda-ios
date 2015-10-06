@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking/AFNetworking.h>
+
+#import "ServiceResponse.h"
+#import "Ad.h"
 
 @interface DashboardViewController : UIViewController
 
@@ -18,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIView *slotView6;
 @property (weak, nonatomic) IBOutlet UIView *slotView7;
 @property (weak, nonatomic) IBOutlet UIView *slotView8;
+
+@property NSMutableArray<Ad *> *adsArray;
 
 + (NSString *)getServiceURL;
 

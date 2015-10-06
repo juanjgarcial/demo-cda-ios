@@ -10,16 +10,24 @@
 
 @interface DashboardViewController ()
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *adLoader;
+@property (weak, nonatomic) IBOutlet UIImageView *adImage;
 
 @end
 
 @implementation DashboardViewController
 
+static int currentAd = 0;
+static bool readyToAd = NO;
 static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@", [DashboardViewController getServiceURL], @"ads"];
+    [self showLoader:YES];
+    [self callService:url];
     
     UIImage *image = [UIImage imageNamed:@"bancaPlusLogoWhite"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
@@ -27,7 +35,8 @@ static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
     CGFloat customWidth = 1.0;
     UIColor *borderColor = [[UIColor alloc] initWithRed:51.0/255.0 green:53.0/255.0 blue:96.0/255.0 alpha:1.0];
 
-    
+    [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(rotateAds) userInfo:nil repeats:YES];
+
     self.slotView1.layer.borderWidth = customWidth;
     self.slotView1.layer.borderColor = [borderColor CGColor];
 
@@ -65,6 +74,50 @@ static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
 
 + (NSString *)getServiceURL {
     return SERVICE_URL;
+}
+
+- (void)callService:(NSString *)serviceUrl {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:serviceUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        NSError *err = nil;
+        ServiceResponse *response = [[ServiceResponse alloc] initWithDictionary:responseObject error:&err];
+        NSMutableArray *serviceAds = [[NSMutableArray alloc] initWithArray:response.ads];
+        self.adsArray = [[NSMutableArray alloc] initWithCapacity:serviceAds.count];
+        for (NSDictionary *ad in serviceAds) {
+            [self.adsArray addObject:[[Ad alloc] initWithDictionary:ad error:&err]];
+        }
+        
+        for (Ad *ad in self.adsArray) {
+            NSURL *urlImage = [[NSURL alloc] initWithString:ad.pPicture];
+            NSData *imageData = [[NSData alloc] initWithContentsOfURL:urlImage];
+            [ad setAdImage:[[UIImage alloc] initWithData:imageData]];
+        }
+        
+        [self showLoader:NO];
+        readyToAd = YES;
+        [self rotateAds];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+- (void)rotateAds {
+    if (readyToAd) {
+        int j = currentAd % self.adsArray.count;
+        self.adImage.image = [[self.adsArray objectAtIndex:j] adImage];
+        currentAd++;
+    }
+}
+
+- (void)showLoader:(BOOL)show {
+    self.adLoader.hidden = !show;
+    if (show) {
+        [self.adLoader startAnimating];
+    } else {
+        [self.adLoader stopAnimating];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

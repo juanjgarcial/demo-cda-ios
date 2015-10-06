@@ -30,6 +30,7 @@
 		DED802FB1BC42A90000C96AA /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802FA1BC42A90000C96AA /* Branch.m */; settings = {ASSET_TAGS = (); }; };
 		DED802FE1BC42AA0000C96AA /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802FD1BC42AA0000C96AA /* Site.m */; settings = {ASSET_TAGS = (); }; };
 		DED803011BC42B2A000C96AA /* WebServiceStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = DED803001BC42B2A000C96AA /* WebServiceStatus.m */; settings = {ASSET_TAGS = (); }; };
+		DED803031BC45FC9000C96AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED803021BC45FC9000C96AA /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		DED802FD1BC42AA0000C96AA /* Site.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Site.m; sourceTree = "<group>"; };
 		DED802FF1BC42B2A000C96AA /* WebServiceStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceStatus.h; sourceTree = "<group>"; };
 		DED803001BC42B2A000C96AA /* WebServiceStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceStatus.m; sourceTree = "<group>"; };
+		DED803021BC45FC9000C96AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED803031BC45FC9000C96AA /* UIKit.framework in Frameworks */,
 				DED802E41BC417E9000C96AA /* MapKit.framework in Frameworks */,
 				88F0D9FB6F2EA3D6AE795BF0 /* libPods.a in Frameworks */,
 			);
@@ -127,6 +130,7 @@
 		2603FB537288658E799390B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DED803021BC45FC9000C96AA /* UIKit.framework */,
 				DED802E31BC417E9000C96AA /* MapKit.framework */,
 				80F22D15BB307BE5D2FD8772 /* libPods.a */,
 			);

@@ -7,7 +7,13 @@
 //
 
 #import "JSONModel.h"
+@import UIKit;
 
 @interface Ad : JSONModel
+
+@property NSString *pText;
+@property NSString *pPicture;
+@property BOOL pActive;
+@property UIImage *adImage;
 
 @end
