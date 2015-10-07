@@ -31,6 +31,8 @@
 		DED802FE1BC42AA0000C96AA /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802FD1BC42AA0000C96AA /* Site.m */; settings = {ASSET_TAGS = (); }; };
 		DED803011BC42B2A000C96AA /* WebServiceStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = DED803001BC42B2A000C96AA /* WebServiceStatus.m */; settings = {ASSET_TAGS = (); }; };
 		DED803031BC45FC9000C96AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED803021BC45FC9000C96AA /* UIKit.framework */; };
+		DED803061BC56405000C96AA /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED803051BC56405000C96AA /* ContactViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DED803091BC56444000C96AA /* SocialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED803081BC56444000C96AA /* SocialTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,10 @@
 		DED802FF1BC42B2A000C96AA /* WebServiceStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceStatus.h; sourceTree = "<group>"; };
 		DED803001BC42B2A000C96AA /* WebServiceStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceStatus.m; sourceTree = "<group>"; };
 		DED803021BC45FC9000C96AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DED803041BC56405000C96AA /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		DED803051BC56405000C96AA /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		DED803071BC56444000C96AA /* SocialTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialTableViewCell.h; sourceTree = "<group>"; };
+		DED803081BC56444000C96AA /* SocialTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,8 @@
 				DE7039C91BC3002500B52CA9 /* Main.storyboard */,
 				DE7039CE1BC3002500B52CA9 /* LaunchScreen.storyboard */,
 				DE7039C01BC3002500B52CA9 /* Supporting Files */,
+				DED803041BC56405000C96AA /* ContactViewController.h */,
+				DED803051BC56405000C96AA /* ContactViewController.m */,
 			);
 			path = DemoCDA;
 			sourceTree = "<group>";
@@ -226,6 +234,8 @@
 			children = (
 				DED802E61BC41E22000C96AA /* SitesTableViewCell.h */,
 				DED802E71BC41E22000C96AA /* SitesTableViewCell.m */,
+				DED803071BC56444000C96AA /* SocialTableViewCell.h */,
+				DED803081BC56444000C96AA /* SocialTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -431,6 +441,8 @@
 				DED802E21BC41754000C96AA /* NewsViewController.m in Sources */,
 				DED802F51BC42A75000C96AA /* Contact.m in Sources */,
 				DED802E81BC41E22000C96AA /* SitesTableViewCell.m in Sources */,
+				DED803091BC56444000C96AA /* SocialTableViewCell.m in Sources */,
+				DED803061BC56405000C96AA /* ContactViewController.m in Sources */,
 				DED802DF1BC41745000C96AA /* MapsViewController.m in Sources */,
 				DED802DC1BC4172F000C96AA /* SitesViewController.m in Sources */,
 			);
