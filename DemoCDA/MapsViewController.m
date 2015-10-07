@@ -14,6 +14,13 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loader;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+@property (weak, nonatomic) IBOutlet UIView *branchDetailView;
+@property (weak, nonatomic) IBOutlet UILabel *branchTitle;
+@property (weak, nonatomic) IBOutlet UILabel *branchType;
+@property (weak, nonatomic) IBOutlet UILabel *branchAddress;
+@property (weak, nonatomic) IBOutlet UILabel *branchHours;
+@property (weak, nonatomic) IBOutlet UILabel *branchPhone;
+
 @property NSMutableArray<Branch *> *branches;
 
 @end
@@ -34,6 +41,9 @@
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1000, 1000);
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
     [self.mapView setRegion:adjustedRegion animated:YES];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dissmisDetail)];
+    [self.mapView addGestureRecognizer:tap];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -56,8 +66,37 @@
     
 }
 
-- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    Branch *selectedBranch = (Branch *)view.annotation;
     
+    self.branchTitle.text = selectedBranch.sName;
+    self.branchType.text = selectedBranch.stypeEstablishment;
+    self.branchAddress.text = selectedBranch.sAddress;
+    self.branchPhone.text = @"+507-123-4567";
+    
+    NSString *dateString = selectedBranch.shoursFrom;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM d, yyyy hh:mm:ss aaa"];
+    NSDate *dateFromString = [[NSDate alloc] init];
+    dateFromString = [dateFormatter dateFromString:dateString];
+    
+    [dateFormatter setDateFormat:@"hh:mm aaa"];
+    NSString *openHour = [dateFormatter stringFromDate:dateFromString];
+    NSLog(@"%@", openHour);
+    
+    dateString = selectedBranch.shoursUntil;
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM d, yyyy hh:mm:ss aaa"];
+    dateFromString = [[NSDate alloc] init];
+    dateFromString = [dateFormatter dateFromString:dateString];
+    
+    [dateFormatter setDateFormat:@"hh:mm aaa"];
+    NSString *closeHour = [dateFormatter stringFromDate:dateFromString];
+    NSLog(@"%@", closeHour);
+    
+    self.branchHours.text = [NSString stringWithFormat:@"%@ - %@",openHour, closeHour];
+    
+    self.branchDetailView.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,6 +126,10 @@
         NSLog(@"Error: %@", error);
         [self showLoader:NO];
     }];
+}
+
+- (void)dissmisDetail {
+    self.branchDetailView.hidden = YES;
 }
 
 - (void)showLoader:(BOOL)show {
