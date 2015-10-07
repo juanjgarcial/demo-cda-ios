@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking/AFNetworking.h>
 
-@interface ContactViewController : UIViewController
+#import "SocialTableViewCell.h"
+#import "ServiceResponse.h"
+#import "DashboardViewController.h"
+#import "WebViewController.h"
+
+@interface ContactViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

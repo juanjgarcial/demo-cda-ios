@@ -12,12 +12,14 @@
 #import "News.h"
 #import "Branch.h"
 #import "Site.h"
+#import "Social.h"
 #import "WebServiceStatus.h"
 
 @interface ServiceResponse : JSONModel
 
 @property (nonatomic, retain) NSArray<Ad *> <Optional> *ads;
 @property (nonatomic, retain) Contact <Optional> *contact;
+@property (nonatomic, retain) NSArray<Social *> <Optional> *social;
 @property (nonatomic, retain) NSArray<News *> <Optional> *news;
 @property (nonatomic, retain) NSArray<Branch *> <Optional> *branches;
 @property (nonatomic, retain) NSArray<Site *> <Optional> *sites;

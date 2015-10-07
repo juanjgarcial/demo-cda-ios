@@ -64,6 +64,8 @@
     
     cell.siteTitle.text = [[self.sites objectAtIndex:indexPath.row] eTitle];
     
+    [cell setSelectionStyle:UITableViewCellEditingStyleNone];
+    
     return cell;
 }
 

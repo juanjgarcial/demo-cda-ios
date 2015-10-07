@@ -10,4 +10,8 @@
 
 @interface Contact : JSONModel
 
+@property NSString *cEmail;
+@property NSString *cPhone;
+@property NSString *cAddress;
+
 @end
