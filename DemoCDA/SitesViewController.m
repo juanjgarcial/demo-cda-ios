@@ -64,7 +64,7 @@
     
     cell.siteTitle.text = [[self.sites objectAtIndex:indexPath.row] eTitle];
     
-    [cell setSelectionStyle:UITableViewCellEditingStyleNone];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
 }
@@ -98,7 +98,11 @@
         NSMutableArray *serviceSites = [[NSMutableArray alloc] initWithArray:response.sites];
         self.sites = [[NSMutableArray alloc] initWithCapacity:serviceSites.count];
         for (NSDictionary *site in serviceSites) {
-            [self.sites addObject:[[Site alloc] initWithDictionary:site error:&err]];
+            Site *s = [[Site alloc] initWithDictionary:site error:&err];
+            if (s.eActive) {
+                [self.sites addObject:s];
+            }
+            
         }
         [self.sitesTableView reloadData];
         [self showLoader:NO];

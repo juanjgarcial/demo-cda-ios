@@ -16,24 +16,24 @@
 		DE7039D01BC3002500B52CA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7039CE1BC3002500B52CA9 /* LaunchScreen.storyboard */; };
 		DE7039DB1BC3002500B52CA9 /* DemoCDATests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039DA1BC3002500B52CA9 /* DemoCDATests.m */; };
 		DE7039E61BC3002500B52CA9 /* DemoCDAUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039E51BC3002500B52CA9 /* DemoCDAUITests.m */; };
-		DE7039F41BC4145300B52CA9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DE7039F31BC4145300B52CA9 /* Podfile */; settings = {ASSET_TAGS = (); }; };
-		DED802DC1BC4172F000C96AA /* SitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802DB1BC4172F000C96AA /* SitesViewController.m */; settings = {ASSET_TAGS = (); }; };
-		DED802DF1BC41745000C96AA /* MapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802DE1BC41745000C96AA /* MapsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		DED802E21BC41754000C96AA /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802E11BC41754000C96AA /* NewsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DE7039F41BC4145300B52CA9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DE7039F31BC4145300B52CA9 /* Podfile */; };
+		DED802DC1BC4172F000C96AA /* SitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802DB1BC4172F000C96AA /* SitesViewController.m */; };
+		DED802DF1BC41745000C96AA /* MapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802DE1BC41745000C96AA /* MapsViewController.m */; };
+		DED802E21BC41754000C96AA /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802E11BC41754000C96AA /* NewsViewController.m */; };
 		DED802E41BC417E9000C96AA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED802E31BC417E9000C96AA /* MapKit.framework */; };
-		DED802E81BC41E22000C96AA /* SitesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802E71BC41E22000C96AA /* SitesTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		DED802EB1BC41E7C000C96AA /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802EA1BC41E7C000C96AA /* WebViewController.m */; settings = {ASSET_TAGS = (); }; };
-		DED802EF1BC42A0A000C96AA /* ServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802EE1BC42A0A000C96AA /* ServiceResponse.m */; settings = {ASSET_TAGS = (); }; };
-		DED802F21BC42A66000C96AA /* Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802F11BC42A66000C96AA /* Ad.m */; settings = {ASSET_TAGS = (); }; };
-		DED802F51BC42A75000C96AA /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802F41BC42A75000C96AA /* Contact.m */; settings = {ASSET_TAGS = (); }; };
-		DED802F81BC42A81000C96AA /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802F71BC42A81000C96AA /* News.m */; settings = {ASSET_TAGS = (); }; };
-		DED802FB1BC42A90000C96AA /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802FA1BC42A90000C96AA /* Branch.m */; settings = {ASSET_TAGS = (); }; };
-		DED802FE1BC42AA0000C96AA /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802FD1BC42AA0000C96AA /* Site.m */; settings = {ASSET_TAGS = (); }; };
-		DED803011BC42B2A000C96AA /* WebServiceStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = DED803001BC42B2A000C96AA /* WebServiceStatus.m */; settings = {ASSET_TAGS = (); }; };
+		DED802E81BC41E22000C96AA /* SitesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802E71BC41E22000C96AA /* SitesTableViewCell.m */; };
+		DED802EB1BC41E7C000C96AA /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802EA1BC41E7C000C96AA /* WebViewController.m */; };
+		DED802EF1BC42A0A000C96AA /* ServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802EE1BC42A0A000C96AA /* ServiceResponse.m */; };
+		DED802F21BC42A66000C96AA /* Ad.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802F11BC42A66000C96AA /* Ad.m */; };
+		DED802F51BC42A75000C96AA /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802F41BC42A75000C96AA /* Contact.m */; };
+		DED802F81BC42A81000C96AA /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802F71BC42A81000C96AA /* News.m */; };
+		DED802FB1BC42A90000C96AA /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802FA1BC42A90000C96AA /* Branch.m */; };
+		DED802FE1BC42AA0000C96AA /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802FD1BC42AA0000C96AA /* Site.m */; };
+		DED803011BC42B2A000C96AA /* WebServiceStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = DED803001BC42B2A000C96AA /* WebServiceStatus.m */; };
 		DED803031BC45FC9000C96AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED803021BC45FC9000C96AA /* UIKit.framework */; };
-		DED803061BC56405000C96AA /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED803051BC56405000C96AA /* ContactViewController.m */; settings = {ASSET_TAGS = (); }; };
-		DED803091BC56444000C96AA /* SocialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED803081BC56444000C96AA /* SocialTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		DED8030C1BC56779000C96AA /* Social.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8030B1BC56779000C96AA /* Social.m */; settings = {ASSET_TAGS = (); }; };
+		DED803061BC56405000C96AA /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED803051BC56405000C96AA /* ContactViewController.m */; };
+		DED803091BC56444000C96AA /* SocialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED803081BC56444000C96AA /* SocialTableViewCell.m */; };
+		DED8030C1BC56779000C96AA /* Social.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8030B1BC56779000C96AA /* Social.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -522,6 +522,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -565,7 +566,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SYNERGY GLOBAL BUSINESS PANAMA, S.A. (S26SHU224Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SYNERGY GLOBAL BUSINESS PANAMA, S.A. (S26SHU224Y)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -580,6 +582,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "e3115bc0-3dbf-4b78-8baf-57ed05878bbb";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -592,9 +595,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DemoCDA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.synergy-gb.DemoCDA";
+				PRODUCT_BUNDLE_IDENTIFIER = com.synergygb.DemoCDA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -605,9 +610,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DemoCDA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.synergy-gb.DemoCDA";
+				PRODUCT_BUNDLE_IDENTIFIER = com.synergygb.DemoCDA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e3115bc0-3dbf-4b78-8baf-57ed05878bbb";
 			};
 			name = Release;
 		};
@@ -654,6 +661,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.synergy-gb.DemoCDAUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e3115bc0-3dbf-4b78-8baf-57ed05878bbb";
 				TEST_TARGET_NAME = DemoCDA;
 				USES_XCTRUNNER = YES;
 			};

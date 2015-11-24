@@ -32,6 +32,14 @@
     
     NSString *url = [NSString stringWithFormat:@"%@%@", [DashboardViewController getServiceURL], @"contact-info"];
     
+    UITapGestureRecognizer* phone1LblGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(phone1LblTapped)];
+    [self.labelPhone setUserInteractionEnabled:YES];
+    [self.labelPhone addGestureRecognizer:phone1LblGesture];
+
+    UITapGestureRecognizer* email1LblGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(email1LblTapped)];
+    [self.labelEmail setUserInteractionEnabled:YES];
+    [self.labelEmail addGestureRecognizer:email1LblGesture];
+    
     [self callService:url];
 }
 
@@ -83,7 +91,7 @@
         cell.socialImage.image = [UIImage imageNamed:@"social"];
     }
     
-    [cell setSelectionStyle:UITableViewCellEditingStyleNone];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
 }
@@ -126,6 +134,24 @@
         [self.loader startAnimating];
     } else {
         [self.loader stopAnimating];
+    }
+}
+
+- (void)phone1LblTapped
+{
+    UIDevice *device = [UIDevice currentDevice];
+    if ([[device model] isEqualToString:@"iPhone"] ) {
+        NSString *phoneNumber = [@"tel://" stringByAppendingString:self.labelPhone.text];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+    }
+}
+
+- (void)email1LblTapped
+{
+    UIDevice *device = [UIDevice currentDevice];
+    if ([[device model] isEqualToString:@"iPhone"] ) {
+        NSString *email = [@"mail://" stringByAppendingString:self.labelEmail.text];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
     }
 }
 

@@ -19,7 +19,10 @@
 
 static int currentAd = 0;
 static bool readyToAd = NO;
+
 static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
+//static NSString *SERVICE_URL = @"http://192.168.0.104:8084/DemoCDA/resources/demo/";
+//static NSString *SERVICE_URL = @"http://190.216.251.147:8080/DemoCDA-1.0/resources/demo/";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -85,7 +88,10 @@ static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
         NSMutableArray *serviceAds = [[NSMutableArray alloc] initWithArray:response.ads];
         self.adsArray = [[NSMutableArray alloc] initWithCapacity:serviceAds.count];
         for (NSDictionary *ad in serviceAds) {
-            [self.adsArray addObject:[[Ad alloc] initWithDictionary:ad error:&err]];
+            Ad *a = [[Ad alloc] initWithDictionary:ad error:&err];
+            if (a.pActive) {
+                [self.adsArray addObject:a];
+            }
         }
         
         for (Ad *ad in self.adsArray) {

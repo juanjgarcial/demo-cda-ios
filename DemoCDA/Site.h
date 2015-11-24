@@ -12,6 +12,6 @@
 
 @property NSString *eTitle;
 @property NSString *eHiperlink;
-@property BOOL pActive;
+@property BOOL eActive;
 
 @end
