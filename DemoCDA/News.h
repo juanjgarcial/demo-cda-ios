@@ -10,4 +10,9 @@
 
 @interface News : JSONModel
 
+@property NSString *nText;
+@property NSString *nPicture;
+@property NSString *nLink;
+@property BOOL nActive;
+
 @end

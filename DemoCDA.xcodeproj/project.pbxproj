@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		88F0D9FB6F2EA3D6AE795BF0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F22D15BB307BE5D2FD8772 /* libPods.a */; };
+		DE0E75061C0F9378000EED14 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E75051C0F9378000EED14 /* NewsTableViewCell.m */; };
 		DE7039C21BC3002500B52CA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039C11BC3002500B52CA9 /* main.m */; };
 		DE7039C51BC3002500B52CA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039C41BC3002500B52CA9 /* AppDelegate.m */; };
 		DE7039C81BC3002500B52CA9 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039C71BC3002500B52CA9 /* DashboardViewController.m */; };
@@ -17,7 +18,7 @@
 		DE7039DB1BC3002500B52CA9 /* DemoCDATests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039DA1BC3002500B52CA9 /* DemoCDATests.m */; };
 		DE7039E61BC3002500B52CA9 /* DemoCDAUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039E51BC3002500B52CA9 /* DemoCDAUITests.m */; };
 		DE7039F41BC4145300B52CA9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DE7039F31BC4145300B52CA9 /* Podfile */; };
-		DED802DC1BC4172F000C96AA /* SitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802DB1BC4172F000C96AA /* SitesViewController.m */; };
+		DED802DC1BC4172F000C96AA /* LinksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802DB1BC4172F000C96AA /* LinksViewController.m */; };
 		DED802DF1BC41745000C96AA /* MapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802DE1BC41745000C96AA /* MapsViewController.m */; };
 		DED802E21BC41754000C96AA /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED802E11BC41754000C96AA /* NewsViewController.m */; };
 		DED802E41BC417E9000C96AA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED802E31BC417E9000C96AA /* MapKit.framework */; };
@@ -57,6 +58,8 @@
 		18AEE5BADD938E3320AD3F47 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6D709E59FA1BF9D167FDEC9F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		80F22D15BB307BE5D2FD8772 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0E75041C0F9378000EED14 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		DE0E75051C0F9378000EED14 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		DE7039BD1BC3002500B52CA9 /* DemoCDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7039C11BC3002500B52CA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE7039C31BC3002500B52CA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,8 +77,8 @@
 		DE7039E51BC3002500B52CA9 /* DemoCDAUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCDAUITests.m; sourceTree = "<group>"; };
 		DE7039E71BC3002500B52CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE7039F31BC4145300B52CA9 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		DED802DA1BC4172F000C96AA /* SitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitesViewController.h; sourceTree = "<group>"; };
-		DED802DB1BC4172F000C96AA /* SitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SitesViewController.m; sourceTree = "<group>"; };
+		DED802DA1BC4172F000C96AA /* LinksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinksViewController.h; sourceTree = "<group>"; };
+		DED802DB1BC4172F000C96AA /* LinksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinksViewController.m; sourceTree = "<group>"; };
 		DED802DD1BC41745000C96AA /* MapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapsViewController.h; sourceTree = "<group>"; };
 		DED802DE1BC41745000C96AA /* MapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapsViewController.m; sourceTree = "<group>"; };
 		DED802E01BC41754000C96AA /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -184,8 +187,8 @@
 				DED802E51BC41E09000C96AA /* Cells */,
 				DE7039C61BC3002500B52CA9 /* DashboardViewController.h */,
 				DE7039C71BC3002500B52CA9 /* DashboardViewController.m */,
-				DED802DA1BC4172F000C96AA /* SitesViewController.h */,
-				DED802DB1BC4172F000C96AA /* SitesViewController.m */,
+				DED802DA1BC4172F000C96AA /* LinksViewController.h */,
+				DED802DB1BC4172F000C96AA /* LinksViewController.m */,
 				DED802DD1BC41745000C96AA /* MapsViewController.h */,
 				DED802DE1BC41745000C96AA /* MapsViewController.m */,
 				DED802E01BC41754000C96AA /* NewsViewController.h */,
@@ -239,6 +242,8 @@
 				DED802E71BC41E22000C96AA /* SitesTableViewCell.m */,
 				DED803071BC56444000C96AA /* SocialTableViewCell.h */,
 				DED803081BC56444000C96AA /* SocialTableViewCell.m */,
+				DE0E75041C0F9378000EED14 /* NewsTableViewCell.h */,
+				DE0E75051C0F9378000EED14 /* NewsTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 				DED8030C1BC56779000C96AA /* Social.m in Sources */,
 				DE7039C21BC3002500B52CA9 /* main.m in Sources */,
 				DED802FB1BC42A90000C96AA /* Branch.m in Sources */,
+				DE0E75061C0F9378000EED14 /* NewsTableViewCell.m in Sources */,
 				DED803011BC42B2A000C96AA /* WebServiceStatus.m in Sources */,
 				DED802EB1BC41E7C000C96AA /* WebViewController.m in Sources */,
 				DED802E21BC41754000C96AA /* NewsViewController.m in Sources */,
@@ -450,7 +456,7 @@
 				DED803091BC56444000C96AA /* SocialTableViewCell.m in Sources */,
 				DED803061BC56405000C96AA /* ContactViewController.m in Sources */,
 				DED802DF1BC41745000C96AA /* MapsViewController.m in Sources */,
-				DED802DC1BC4172F000C96AA /* SitesViewController.m in Sources */,
+				DED802DC1BC4172F000C96AA /* LinksViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

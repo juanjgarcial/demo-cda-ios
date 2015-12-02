@@ -6,9 +6,9 @@
 //  Copyright © 2015 Synergy Global Business. All rights reserved.
 //
 
-#import "SitesViewController.h"
+#import "LinksViewController.h"
 
-@interface SitesViewController ()
+@interface LinksViewController ()
 
 @property NSMutableArray<Site *> *sites;
 
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation SitesViewController
+@implementation LinksViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -114,6 +114,7 @@
 
 - (void)showLoader:(BOOL)show {
     self.loaderView.hidden = !show;
+    self.loader.hidden = !show;
     if (show) {
         [self.loader startAnimating];
     } else {

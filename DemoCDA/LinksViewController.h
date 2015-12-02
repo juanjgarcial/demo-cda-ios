@@ -14,7 +14,7 @@
 #import "DashboardViewController.h"
 #import "WebViewController.h"
 
-@interface SitesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface LinksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *sitesTableView;
 
