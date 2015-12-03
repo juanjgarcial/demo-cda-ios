@@ -10,6 +10,7 @@
 
 #import <AFNetworking/AFNetworking.h>
 
+#import "BenefitDetailViewController.h"
 #import "DashboardViewController.h"
 #import "BenefitTableViewCell.h"
 #import "ServiceResponse.h"
@@ -82,13 +83,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self setSelectedRow:indexPath.row];
-    [self performSegueWithIdentifier:@"showSiteDetail" sender:self];
+    [self performSegueWithIdentifier:@"showBenefitDetail" sender:self];
 }
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSString *detailTitle = [[[self benefits] objectAtIndex:[self selectedRow]] bText];
+    NSString *detailSubTitle = [[[self benefits] objectAtIndex:[self selectedRow]] bDetail];
+    NSString *detailImage = [[[self benefits] objectAtIndex:[self selectedRow]] bpictureDetail];
     
+    [((BenefitDetailViewController *)[segue destinationViewController]) setBenefitTitleText:detailTitle];
+    [((BenefitDetailViewController *)[segue destinationViewController]) setBenefitSubTitle:detailSubTitle];
+    [((BenefitDetailViewController *)[segue destinationViewController]) setBenefitImageTitle:detailImage];
 }
 
 

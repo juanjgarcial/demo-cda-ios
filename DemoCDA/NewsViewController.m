@@ -87,7 +87,7 @@
     if ([[segue identifier] isEqualToString:@"pushNewsDetail"]) {
         NSString *urlToLoad = [[[self news] objectAtIndex:[self selectedRow]] nLink];
         [((WebViewController *)[segue destinationViewController]) setUrlToLoad:urlToLoad];
-        NSString *titleToView = [[[self news] objectAtIndex:[self selectedRow]] nText];
+        NSString *titleToView = @"Detalle Noticia";
         [((WebViewController *)[segue destinationViewController]) setPageTitle:titleToView];
     }
 }

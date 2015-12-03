@@ -10,4 +10,8 @@
 
 @interface BenefitDetailViewController : UIViewController
 
+@property NSString *benefitTitleText;
+@property NSString *benefitSubTitle;
+@property NSString *benefitImageTitle;
+
 @end
