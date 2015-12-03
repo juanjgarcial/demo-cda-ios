@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		88F0D9FB6F2EA3D6AE795BF0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F22D15BB307BE5D2FD8772 /* libPods.a */; };
 		DE0E75061C0F9378000EED14 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E75051C0F9378000EED14 /* NewsTableViewCell.m */; };
+		DE0E75091C10D02C000EED14 /* Benefit.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E75081C10D02C000EED14 /* Benefit.m */; };
+		DE0E750C1C10D07D000EED14 /* BenefitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E750B1C10D07D000EED14 /* BenefitTableViewCell.m */; };
+		DE0E75101C10D109000EED14 /* BenefitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E750F1C10D109000EED14 /* BenefitsViewController.m */; };
+		DE0E75131C10D19D000EED14 /* BenefitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E75121C10D19D000EED14 /* BenefitDetailViewController.m */; };
 		DE7039C21BC3002500B52CA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039C11BC3002500B52CA9 /* main.m */; };
 		DE7039C51BC3002500B52CA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039C41BC3002500B52CA9 /* AppDelegate.m */; };
 		DE7039C81BC3002500B52CA9 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039C71BC3002500B52CA9 /* DashboardViewController.m */; };
@@ -60,6 +64,14 @@
 		80F22D15BB307BE5D2FD8772 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0E75041C0F9378000EED14 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
 		DE0E75051C0F9378000EED14 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		DE0E75071C10D02B000EED14 /* Benefit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Benefit.h; sourceTree = "<group>"; };
+		DE0E75081C10D02C000EED14 /* Benefit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Benefit.m; sourceTree = "<group>"; };
+		DE0E750A1C10D07D000EED14 /* BenefitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenefitTableViewCell.h; sourceTree = "<group>"; };
+		DE0E750B1C10D07D000EED14 /* BenefitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenefitTableViewCell.m; sourceTree = "<group>"; };
+		DE0E750E1C10D109000EED14 /* BenefitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenefitsViewController.h; sourceTree = "<group>"; };
+		DE0E750F1C10D109000EED14 /* BenefitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenefitsViewController.m; sourceTree = "<group>"; };
+		DE0E75111C10D19D000EED14 /* BenefitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenefitDetailViewController.h; sourceTree = "<group>"; };
+		DE0E75121C10D19D000EED14 /* BenefitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenefitDetailViewController.m; sourceTree = "<group>"; };
 		DE7039BD1BC3002500B52CA9 /* DemoCDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7039C11BC3002500B52CA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE7039C31BC3002500B52CA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +170,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DE0E750D1C10D0B5000EED14 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE7039C61BC3002500B52CA9 /* DashboardViewController.h */,
+				DE7039C71BC3002500B52CA9 /* DashboardViewController.m */,
+				DED802DA1BC4172F000C96AA /* LinksViewController.h */,
+				DED802DB1BC4172F000C96AA /* LinksViewController.m */,
+				DED802DD1BC41745000C96AA /* MapsViewController.h */,
+				DED802DE1BC41745000C96AA /* MapsViewController.m */,
+				DED802E01BC41754000C96AA /* NewsViewController.h */,
+				DED802E11BC41754000C96AA /* NewsViewController.m */,
+				DED802E91BC41E7C000C96AA /* WebViewController.h */,
+				DED802EA1BC41E7C000C96AA /* WebViewController.m */,
+				DED803041BC56405000C96AA /* ContactViewController.h */,
+				DED803051BC56405000C96AA /* ContactViewController.m */,
+				DE0E750E1C10D109000EED14 /* BenefitsViewController.h */,
+				DE0E750F1C10D109000EED14 /* BenefitsViewController.m */,
+				DE0E75111C10D19D000EED14 /* BenefitDetailViewController.h */,
+				DE0E75121C10D19D000EED14 /* BenefitDetailViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		DE7039B41BC3002400B52CA9 = {
 			isa = PBXGroup;
 			children = (
@@ -185,18 +220,7 @@
 			children = (
 				DED802EC1BC429E4000C96AA /* Models */,
 				DED802E51BC41E09000C96AA /* Cells */,
-				DE7039C61BC3002500B52CA9 /* DashboardViewController.h */,
-				DE7039C71BC3002500B52CA9 /* DashboardViewController.m */,
-				DED802DA1BC4172F000C96AA /* LinksViewController.h */,
-				DED802DB1BC4172F000C96AA /* LinksViewController.m */,
-				DED802DD1BC41745000C96AA /* MapsViewController.h */,
-				DED802DE1BC41745000C96AA /* MapsViewController.m */,
-				DED802E01BC41754000C96AA /* NewsViewController.h */,
-				DED802E11BC41754000C96AA /* NewsViewController.m */,
-				DED802E91BC41E7C000C96AA /* WebViewController.h */,
-				DED802EA1BC41E7C000C96AA /* WebViewController.m */,
-				DED803041BC56405000C96AA /* ContactViewController.h */,
-				DED803051BC56405000C96AA /* ContactViewController.m */,
+				DE0E750D1C10D0B5000EED14 /* ViewControllers */,
 				DE7039C91BC3002500B52CA9 /* Main.storyboard */,
 				DE7039CE1BC3002500B52CA9 /* LaunchScreen.storyboard */,
 				DE7039C01BC3002500B52CA9 /* Supporting Files */,
@@ -244,6 +268,8 @@
 				DED803081BC56444000C96AA /* SocialTableViewCell.m */,
 				DE0E75041C0F9378000EED14 /* NewsTableViewCell.h */,
 				DE0E75051C0F9378000EED14 /* NewsTableViewCell.m */,
+				DE0E750A1C10D07D000EED14 /* BenefitTableViewCell.h */,
+				DE0E750B1C10D07D000EED14 /* BenefitTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -267,6 +293,8 @@
 				DED803001BC42B2A000C96AA /* WebServiceStatus.m */,
 				DED8030A1BC56779000C96AA /* Social.h */,
 				DED8030B1BC56779000C96AA /* Social.m */,
+				DE0E75071C10D02B000EED14 /* Benefit.h */,
+				DE0E75081C10D02C000EED14 /* Benefit.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -440,14 +468,18 @@
 			files = (
 				DED802EF1BC42A0A000C96AA /* ServiceResponse.m in Sources */,
 				DE7039C81BC3002500B52CA9 /* DashboardViewController.m in Sources */,
+				DE0E75101C10D109000EED14 /* BenefitsViewController.m in Sources */,
 				DED802F81BC42A81000C96AA /* News.m in Sources */,
 				DED802F21BC42A66000C96AA /* Ad.m in Sources */,
 				DED802FE1BC42AA0000C96AA /* Site.m in Sources */,
+				DE0E75091C10D02C000EED14 /* Benefit.m in Sources */,
 				DE7039C51BC3002500B52CA9 /* AppDelegate.m in Sources */,
 				DED8030C1BC56779000C96AA /* Social.m in Sources */,
+				DE0E750C1C10D07D000EED14 /* BenefitTableViewCell.m in Sources */,
 				DE7039C21BC3002500B52CA9 /* main.m in Sources */,
 				DED802FB1BC42A90000C96AA /* Branch.m in Sources */,
 				DE0E75061C0F9378000EED14 /* NewsTableViewCell.m in Sources */,
+				DE0E75131C10D19D000EED14 /* BenefitDetailViewController.m in Sources */,
 				DED803011BC42B2A000C96AA /* WebServiceStatus.m in Sources */,
 				DED802EB1BC41E7C000C96AA /* WebViewController.m in Sources */,
 				DED802E21BC41754000C96AA /* NewsViewController.m in Sources */,

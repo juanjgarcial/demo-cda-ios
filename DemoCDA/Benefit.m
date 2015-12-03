@@ -1,14 +1,14 @@
 //
-//  Social.m
+//  Benefit.m
 //  DemoCDA
 //
-//  Created by SGBPty-002 on 10/7/15.
+//  Created by SGBPty-002 on 12/3/15.
 //  Copyright © 2015 Synergy Global Business. All rights reserved.
 //
 
-#import "Social.h"
+#import "Benefit.h"
 
-@implementation Social
+@implementation Benefit
 
 +(BOOL)propertyIsOptional:(NSString*)propertyName
 {
