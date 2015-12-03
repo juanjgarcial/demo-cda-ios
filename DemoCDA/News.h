@@ -7,6 +7,7 @@
 //
 
 #import "JSONModel.h"
+#import <UIKit/UIKit.h>
 
 @interface News : JSONModel
 
@@ -14,5 +15,6 @@
 @property NSString *nPicture;
 @property NSString *nLink;
 @property BOOL nActive;
+@property UIImage *coverImage;
 
 @end

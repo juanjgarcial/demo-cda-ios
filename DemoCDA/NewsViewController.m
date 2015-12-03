@@ -98,18 +98,19 @@
     [self showLoader:YES];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:serviceUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
         NSLog(@"JSON: %@", responseObject);
         NSError *err = nil;
         ServiceResponse *response = [[ServiceResponse alloc] initWithDictionary:responseObject error:&err];
-        NSMutableArray *serviceSites = [[NSMutableArray alloc] initWithArray:response.sites];
-        self.news = [[NSMutableArray alloc] initWithCapacity:serviceSites.count];
-        for (NSDictionary *site in serviceSites) {
+        NSMutableArray *serviceNews = [[NSMutableArray alloc] initWithArray:response.news];
+        self.news = [[NSMutableArray alloc] initWithCapacity:serviceNews.count];
+        for (NSDictionary *site in serviceNews) {
             News *n = [[News alloc] initWithDictionary:site error:&err];
             if (n.nActive) {
                 [self.news addObject:n];
             }
-            
         }
+        
         [self.newsTableView reloadData];
         [self showLoader:NO];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
