@@ -100,6 +100,34 @@
     self.branchHours.text = [NSString stringWithFormat:@"%@ - %@",openHour, closeHour];
     
     self.branchDetailView.hidden = NO;
+    
+    self.branchImage.image = nil;
+    [self.imageLoader startAnimating];
+    self.imageLoader.hidden = false;
+   
+    UIImage *cachedImage = [[DashboardViewController getCacheManager] objectForKey:selectedBranch.sPicture];
+    if (cachedImage != nil) {
+        self.branchImage.image = cachedImage;
+        self.imageLoader.hidden = true;
+        [self.imageLoader stopAnimating];
+    } else {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            NSURL *urlImage = [NSURL URLWithString:selectedBranch.sPicture];
+            NSData *dataImage = [NSData dataWithContentsOfURL:urlImage];
+            UIImage *imageToSet;
+            if (dataImage != nil) {
+                imageToSet = [UIImage imageWithData:dataImage];
+            } else {
+                imageToSet = [UIImage imageNamed:@"mapsImage"];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.branchImage.image = imageToSet;
+                self.imageLoader.hidden = true;
+                [self.imageLoader stopAnimating];
+            });
+        });
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
