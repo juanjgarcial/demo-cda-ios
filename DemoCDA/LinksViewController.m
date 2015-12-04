@@ -11,7 +11,7 @@
 @interface LinksViewController ()
 
 @property NSMutableArray<Site *> *sites;
-
+@property NSMutableArray<Term *> *terms;
 
 @property (weak, nonatomic) IBOutlet UIView *loaderView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loader;
@@ -65,7 +65,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.sites.count;
+    if (self.showingSites) {
+        return self.sites.count;
+    } else {
+        return self.terms.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,7 +81,7 @@
     if (self.showingSites) {
         cell.siteTitle.text = [[self.sites objectAtIndex:indexPath.row] eTitle];
     } else {
-        
+        cell.siteTitle.text = [[self.terms objectAtIndex:indexPath.row] tNombre];
     }
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -101,7 +105,8 @@
         urlToLoad = [[[self sites] objectAtIndex:[self selectedRow]] eHiperlink];
         titleToView = [[[self sites] objectAtIndex:[self selectedRow]] eTitle];
     } else {
-        
+        urlToLoad = [[[self terms] objectAtIndex:[self selectedRow]] tLink];
+        titleToView = [[[self terms] objectAtIndex:[self selectedRow]] tNombre];
     }
     
     [((WebViewController *)[segue destinationViewController]) setUrlToLoad:urlToLoad];
@@ -142,12 +147,12 @@
         NSLog(@"JSON: %@", responseObject);
         NSError *err = nil;
         ServiceResponse *response = [[ServiceResponse alloc] initWithDictionary:responseObject error:&err];
-        NSMutableArray *serviceSites = [[NSMutableArray alloc] initWithArray:response.sites];
-        self.sites = [[NSMutableArray alloc] initWithCapacity:serviceSites.count];
-        for (NSDictionary *site in serviceSites) {
-            Site *s = [[Site alloc] initWithDictionary:site error:&err];
-            if (s.eActive) {
-                [self.sites addObject:s];
+        NSMutableArray *serviceTerms = [[NSMutableArray alloc] initWithArray:response.terms];
+        self.terms = [[NSMutableArray alloc] initWithCapacity:serviceTerms.count];
+        for (NSDictionary *term in serviceTerms) {
+            Term *t = [[Term alloc] initWithDictionary:term error:&err];
+            if (t.tActive) {
+                [self.terms addObject:t];
             }
             
         }
