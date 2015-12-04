@@ -140,7 +140,9 @@ static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [((LinksViewController *)[segue destinationViewController]) setShowingSites:showSites];
+    if ([[segue identifier] isEqualToString:@"pushLink"]) {
+        [((LinksViewController *)[segue destinationViewController]) setShowingSites:showSites];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

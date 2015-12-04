@@ -81,8 +81,8 @@
     NSString *dateString = selectedBranch.shoursFrom;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM d, yyyy hh:mm:ss aaa"];
-    NSDate *dateFromString = [[NSDate alloc] init];
-    dateFromString = [dateFormatter dateFromString:dateString];
+
+    NSDate *dateFromString = [dateFormatter dateFromString:dateString];
     
     [dateFormatter setDateFormat:@"hh:mm aaa"];
     NSString *openHour = [dateFormatter stringFromDate:dateFromString];
@@ -91,7 +91,6 @@
     dateString = selectedBranch.shoursUntil;
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MMM d, yyyy hh:mm:ss aaa"];
-    dateFromString = [[NSDate alloc] init];
     dateFromString = [dateFormatter dateFromString:dateString];
     
     [dateFormatter setDateFormat:@"hh:mm aaa"];

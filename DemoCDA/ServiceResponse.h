@@ -27,7 +27,7 @@
 @property (nonatomic, retain) NSArray<Branch *> <Optional> *branches;
 @property (nonatomic, retain) NSArray<Site *> <Optional> *sites;
 @property (nonatomic, retain) NSArray<Benefit *> <Optional> *benefits;
-@property (nonatomic, retain) NSArray<Faq *> <Optional> *faqs;
+@property (nonatomic, retain) NSArray<Faq *> <Optional> *faq;
 @property (nonatomic, retain) NSArray<Term *> <Optional> *terms;
 @property (nonatomic, retain) WebServiceStatus *status;
 
