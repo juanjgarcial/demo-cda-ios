@@ -26,6 +26,7 @@
 @property NSMutableArray<Ad *> *adsArray;
 
 + (NSString *)getServiceURL;
++ (NSCache *)getCacheManager;
 
 @end
 

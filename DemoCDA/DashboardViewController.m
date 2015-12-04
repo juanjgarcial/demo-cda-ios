@@ -22,6 +22,7 @@
 static int currentAd = 0;
 static bool readyToAd = NO;
 static bool showSites = NO;
+static NSCache *cacheManager;
 
 static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
 //static NSString *SERVICE_URL = @"http://192.168.0.104:8084/DemoCDA/resources/demo/";
@@ -137,6 +138,13 @@ static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
     } else {
         [self.adLoader stopAnimating];
     }
+}
+
++ (NSCache *)getCacheManager {
+    if (cacheManager == nil) {
+        cacheManager = [[NSCache alloc] init];
+    }
+    return cacheManager;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

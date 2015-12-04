@@ -3423,7 +3423,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BKu-cr-V3x">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BKu-cr-V3x">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="BKu-cr-V3x" secondAttribute="height" multiplier="11:6" id="7mS-W0-LBa"/>
@@ -3451,7 +3451,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBO-wt-xoY">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <subviews>
-                                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4I-eV-xbK">
+                                                        <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4I-eV-xbK">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
@@ -3741,6 +3741,6 @@
         <image name="termsImage" width="512" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ihq-JY-WXw"/>
+        <segue reference="IUi-Qv-Hv5"/>
     </inferredMetricsTieBreakers>
 </document>

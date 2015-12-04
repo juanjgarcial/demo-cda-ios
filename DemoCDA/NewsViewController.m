@@ -70,6 +70,15 @@
     
     cell.newsTitle.text = [[self.news objectAtIndex:indexPath.row] nText];
     
+    if ([[self.news objectAtIndex:indexPath.row] coverImage] != nil) {
+        cell.newsImage.image = [[self.news objectAtIndex:indexPath.row] coverImage];
+        cell.imageLoader.hidden = true;
+        [cell.imageLoader stopAnimating];
+    } else {
+        cell.imageLoader.hidden = false;
+        [cell.imageLoader startAnimating];
+    }
+    
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
@@ -112,6 +121,31 @@
         }
         
         [self.newsTableView reloadData];
+        
+        for (News *n in self.news) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                UIImage *cachedImaage = (UIImage *)[[DashboardViewController getCacheManager] objectForKey:n.nPicture];
+                if (cachedImaage != nil) {
+                    [n setCoverImage:cachedImaage];
+                } else {
+                    NSURL *urlImage = [[NSURL alloc] initWithString:n.nPicture];
+                    NSData *imageData = [[NSData alloc] initWithContentsOfURL:urlImage];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (imageData != nil) {
+                            UIImage *newsImage = [[UIImage alloc] initWithData:imageData];
+                            [[DashboardViewController getCacheManager] setObject:newsImage forKey:n.nPicture];
+                            [n setCoverImage:newsImage];
+                        } else {
+                            [n setCoverImage:[UIImage imageNamed:@"newsImage"]];
+                        }
+                        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.news indexOfObject:n] inSection:0];
+                        NSArray *myIPs = [[NSArray alloc] initWithObjects:indexPath, nil];
+                        [self.newsTableView reloadRowsAtIndexPaths:myIPs withRowAnimation:UITableViewRowAnimationFade];
+                    });
+                }
+            });
+        }
+        
         [self showLoader:NO];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
