@@ -126,7 +126,12 @@
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
                 UIImage *cachedImaage = (UIImage *)[[DashboardViewController getCacheManager] objectForKey:n.nPicture];
                 if (cachedImaage != nil) {
-                    [n setCoverImage:cachedImaage];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [n setCoverImage:cachedImaage];
+                        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.news indexOfObject:n] inSection:0];
+                        NSArray *myIPs = [[NSArray alloc] initWithObjects:indexPath, nil];
+                        [self.newsTableView reloadRowsAtIndexPaths:myIPs withRowAnimation:UITableViewRowAnimationFade];
+                    });
                 } else {
                     NSURL *urlImage = [[NSURL alloc] initWithString:n.nPicture];
                     NSData *imageData = [[NSData alloc] initWithContentsOfURL:urlImage];

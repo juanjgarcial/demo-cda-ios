@@ -78,6 +78,16 @@
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
+    UIImage *benefitImage = [[self.benefits objectAtIndex:indexPath.row] thumbnailImage];
+    if (benefitImage != nil) {
+        cell.thumbnailImage.image = benefitImage;
+        cell.imageLoader.hidden = true;
+        [cell.imageLoader stopAnimating];
+    } else {
+        [cell.imageLoader startAnimating];
+        cell.imageLoader.hidden = false;
+    }
+    
     return cell;
 }
 
@@ -118,6 +128,37 @@
         }
         [self.benefitsTableView reloadData];
         [self showLoader:NO];
+        
+        for (Benefit *b in self.benefits) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                UIImage *cachedImage = [[DashboardViewController getCacheManager] objectForKey:b.bPicture];
+                if (cachedImage != nil) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [b setThumbnailImage:cachedImage];
+                        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.benefits indexOfObject:b] inSection:0];
+                        NSArray *myIPs = [[NSArray alloc] initWithObjects:indexPath, nil];
+                        [self.benefitsTableView reloadRowsAtIndexPaths:myIPs withRowAnimation:UITableViewRowAnimationFade];
+                    });
+                } else {
+                    NSURL *urlImage = [NSURL URLWithString:b.bPicture];
+                    NSData *imageData = [NSData dataWithContentsOfURL:urlImage];
+                    UIImage *imageToSet;
+                    if (imageData != nil) {
+                        imageToSet = [UIImage imageWithData:imageData];
+                        [[DashboardViewController getCacheManager] setObject:imageToSet forKey:b.bPicture];
+                    } else {
+                        imageToSet = [UIImage imageNamed:@"offersImage"];
+                    }
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [b setThumbnailImage:imageToSet];
+                        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.benefits indexOfObject:b] inSection:0];
+                        NSArray *myIPs = [[NSArray alloc] initWithObjects:indexPath, nil];
+                        [self.benefitsTableView reloadRowsAtIndexPaths:myIPs withRowAnimation:UITableViewRowAnimationFade];
+                    });
+                }
+            });
+        }
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         [self showLoader:NO];

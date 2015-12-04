@@ -7,6 +7,7 @@
 //
 
 #import "JSONModel.h"
+#import <UIKit/UIKit.h>
 
 @interface Benefit : JSONModel
 
@@ -15,5 +16,6 @@
 @property NSString *bDetail;
 @property NSString *bpictureDetail;
 @property BOOL bActive;
+@property UIImage *thumbnailImage;
 
 @end
