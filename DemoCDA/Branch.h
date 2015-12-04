@@ -19,6 +19,8 @@
 @property NSString *shoursUntil;
 @property NSString *stypeEstablishment;
 @property NSString *sName;
+@property NSString *sPicture;
+@property NSString *stypeHours;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 
 @end

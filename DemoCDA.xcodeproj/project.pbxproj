@@ -13,6 +13,8 @@
 		DE0E750C1C10D07D000EED14 /* BenefitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E750B1C10D07D000EED14 /* BenefitTableViewCell.m */; };
 		DE0E75101C10D109000EED14 /* BenefitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E750F1C10D109000EED14 /* BenefitsViewController.m */; };
 		DE0E75131C10D19D000EED14 /* BenefitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E75121C10D19D000EED14 /* BenefitDetailViewController.m */; };
+		DE0E75161C11CC80000EED14 /* Term.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E75151C11CC80000EED14 /* Term.m */; };
+		DE0E75191C11CE84000EED14 /* Faq.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0E75181C11CE84000EED14 /* Faq.m */; };
 		DE7039C21BC3002500B52CA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039C11BC3002500B52CA9 /* main.m */; };
 		DE7039C51BC3002500B52CA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039C41BC3002500B52CA9 /* AppDelegate.m */; };
 		DE7039C81BC3002500B52CA9 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7039C71BC3002500B52CA9 /* DashboardViewController.m */; };
@@ -72,6 +74,10 @@
 		DE0E750F1C10D109000EED14 /* BenefitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenefitsViewController.m; sourceTree = "<group>"; };
 		DE0E75111C10D19D000EED14 /* BenefitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenefitDetailViewController.h; sourceTree = "<group>"; };
 		DE0E75121C10D19D000EED14 /* BenefitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenefitDetailViewController.m; sourceTree = "<group>"; };
+		DE0E75141C11CC80000EED14 /* Term.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Term.h; sourceTree = "<group>"; };
+		DE0E75151C11CC80000EED14 /* Term.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Term.m; sourceTree = "<group>"; };
+		DE0E75171C11CE84000EED14 /* Faq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faq.h; sourceTree = "<group>"; };
+		DE0E75181C11CE84000EED14 /* Faq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faq.m; sourceTree = "<group>"; };
 		DE7039BD1BC3002500B52CA9 /* DemoCDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7039C11BC3002500B52CA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE7039C31BC3002500B52CA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -295,6 +301,10 @@
 				DED8030B1BC56779000C96AA /* Social.m */,
 				DE0E75071C10D02B000EED14 /* Benefit.h */,
 				DE0E75081C10D02C000EED14 /* Benefit.m */,
+				DE0E75141C11CC80000EED14 /* Term.h */,
+				DE0E75151C11CC80000EED14 /* Term.m */,
+				DE0E75171C11CE84000EED14 /* Faq.h */,
+				DE0E75181C11CE84000EED14 /* Faq.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -475,6 +485,7 @@
 				DE0E75091C10D02C000EED14 /* Benefit.m in Sources */,
 				DE7039C51BC3002500B52CA9 /* AppDelegate.m in Sources */,
 				DED8030C1BC56779000C96AA /* Social.m in Sources */,
+				DE0E75161C11CC80000EED14 /* Term.m in Sources */,
 				DE0E750C1C10D07D000EED14 /* BenefitTableViewCell.m in Sources */,
 				DE7039C21BC3002500B52CA9 /* main.m in Sources */,
 				DED802FB1BC42A90000C96AA /* Branch.m in Sources */,
@@ -487,6 +498,7 @@
 				DED802E81BC41E22000C96AA /* SitesTableViewCell.m in Sources */,
 				DED803091BC56444000C96AA /* SocialTableViewCell.m in Sources */,
 				DED803061BC56405000C96AA /* ContactViewController.m in Sources */,
+				DE0E75191C11CE84000EED14 /* Faq.m in Sources */,
 				DED802DF1BC41745000C96AA /* MapsViewController.m in Sources */,
 				DED802DC1BC4172F000C96AA /* LinksViewController.m in Sources */,
 			);

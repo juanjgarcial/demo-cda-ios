@@ -19,7 +19,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *branchType;
 @property (weak, nonatomic) IBOutlet UILabel *branchAddress;
 @property (weak, nonatomic) IBOutlet UILabel *branchHours;
+@property (weak, nonatomic) IBOutlet UILabel *branchHourType;
 @property (weak, nonatomic) IBOutlet UILabel *branchPhone;
+@property (weak, nonatomic) IBOutlet UIImageView *branchImage;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageLoader;
 
 @property NSMutableArray<Branch *> *branches;
 
@@ -72,6 +75,7 @@
     self.branchTitle.text = selectedBranch.sName;
     self.branchType.text = selectedBranch.stypeEstablishment;
     self.branchAddress.text = selectedBranch.sAddress;
+    self.branchHourType.text = selectedBranch.stypeHours;
     self.branchPhone.text = @"+507-123-4567";
     
     NSString *dateString = selectedBranch.shoursFrom;

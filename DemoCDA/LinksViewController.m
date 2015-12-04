@@ -12,6 +12,7 @@
 
 @property NSMutableArray<Site *> *sites;
 
+
 @property (weak, nonatomic) IBOutlet UIView *loaderView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loader;
 
@@ -28,7 +29,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[self navigationItem] setTitle:@"Sitios de Interés"];
+    if (self.showingSites) {
+        [[self navigationItem] setTitle:@"Sitios de interés"];
+    } else {
+        [[self navigationItem] setTitle:@"Términos y condiciones"];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -43,8 +48,14 @@
 #pragma mark - Init Methods
 
 - (void)retrieveAndSetSites {
-    NSString *url = [NSString stringWithFormat:@"%@%@", [DashboardViewController getServiceURL], @"sites"];
-    [self callService:url];
+    if (self.showingSites) {
+        NSString *url = [NSString stringWithFormat:@"%@%@", [DashboardViewController getServiceURL], @"sites"];
+        [self callServiceSites:url];
+    } else {
+        NSString *url = [NSString stringWithFormat:@"%@%@", [DashboardViewController getServiceURL], @"terms"];
+        [self callServiceTerms:url];
+    }
+    
 }
 
 #pragma mark - TableView Methods
@@ -58,11 +69,16 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     SitesTableViewCell *cell;
     
     cell = [tableView dequeueReusableCellWithIdentifier:@"sitesCell"];
     
-    cell.siteTitle.text = [[self.sites objectAtIndex:indexPath.row] eTitle];
+    if (self.showingSites) {
+        cell.siteTitle.text = [[self.sites objectAtIndex:indexPath.row] eTitle];
+    } else {
+        
+    }
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
@@ -78,17 +94,24 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showSiteDetail"]) {
-        NSString *urlToLoad = [[[self sites] objectAtIndex:[self selectedRow]] eHiperlink];
-        [((WebViewController *)[segue destinationViewController]) setUrlToLoad:urlToLoad];
-        NSString *titleToView = [[[self sites] objectAtIndex:[self selectedRow]] eTitle];
-        [((WebViewController *)[segue destinationViewController]) setPageTitle:titleToView];
+    NSString *urlToLoad = @"";
+    NSString *titleToView = @"";
+    
+    if (self.showingSites) {
+        urlToLoad = [[[self sites] objectAtIndex:[self selectedRow]] eHiperlink];
+        titleToView = [[[self sites] objectAtIndex:[self selectedRow]] eTitle];
+    } else {
+        
     }
+    
+    [((WebViewController *)[segue destinationViewController]) setUrlToLoad:urlToLoad];
+    [((WebViewController *)[segue destinationViewController]) setPageTitle:titleToView];
+
 }
 
 #pragma mark - Other Methods
 
-- (void)callService:(NSString *)serviceUrl {
+- (void)callServiceSites:(NSString *)serviceUrl {
     [self showLoader:YES];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:serviceUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -111,6 +134,31 @@
         [self showLoader:NO];
     }];
 }
+
+-  (void)callServiceTerms:(NSString *)serviceUrl {
+    [self showLoader:YES];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:serviceUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        NSError *err = nil;
+        ServiceResponse *response = [[ServiceResponse alloc] initWithDictionary:responseObject error:&err];
+        NSMutableArray *serviceSites = [[NSMutableArray alloc] initWithArray:response.sites];
+        self.sites = [[NSMutableArray alloc] initWithCapacity:serviceSites.count];
+        for (NSDictionary *site in serviceSites) {
+            Site *s = [[Site alloc] initWithDictionary:site error:&err];
+            if (s.eActive) {
+                [self.sites addObject:s];
+            }
+            
+        }
+        [self.sitesTableView reloadData];
+        [self showLoader:NO];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        [self showLoader:NO];
+    }];
+}
+
 
 - (void)showLoader:(BOOL)show {
     self.loaderView.hidden = !show;

@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *sitesTableView;
 
+@property BOOL showingSites;
+
 - (void)showLoader:(BOOL)show;
 
 @end

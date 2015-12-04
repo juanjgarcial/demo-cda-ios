@@ -8,6 +8,8 @@
 
 #import "DashboardViewController.h"
 
+#import "LinksViewController.h"
+
 @interface DashboardViewController ()
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *adLoader;
@@ -19,6 +21,7 @@
 
 static int currentAd = 0;
 static bool readyToAd = NO;
+static bool showSites = NO;
 
 static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
 //static NSString *SERVICE_URL = @"http://192.168.0.104:8084/DemoCDA/resources/demo/";
@@ -117,6 +120,16 @@ static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
     }
 }
 
+- (IBAction)pushSites:(id)sender {
+    showSites = YES;
+    [self performSegueWithIdentifier:@"pushLink" sender:self];
+}
+
+- (IBAction)pushTerms:(id)sender {
+    showSites = NO;
+    [self performSegueWithIdentifier:@"pushLink" sender:self];
+}
+
 - (void)showLoader:(BOOL)show {
     self.adLoader.hidden = !show;
     if (show) {
@@ -124,6 +137,10 @@ static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
     } else {
         [self.adLoader stopAnimating];
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [((LinksViewController *)[segue destinationViewController]) setShowingSites:showSites];
 }
 
 - (void)didReceiveMemoryWarning {
