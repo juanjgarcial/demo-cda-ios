@@ -98,15 +98,18 @@ static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
             }
         }
         
-        for (Ad *ad in self.adsArray) {
-            NSURL *urlImage = [[NSURL alloc] initWithString:ad.pPicture];
-            NSData *imageData = [[NSData alloc] initWithContentsOfURL:urlImage];
-            [ad setAdImage:[[UIImage alloc] initWithData:imageData]];
-        }
-        
-        [self showLoader:NO];
-        readyToAd = YES;
-        [self rotateAds];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            for (Ad *ad in self.adsArray) {
+                NSURL *urlImage = [[NSURL alloc] initWithString:ad.pPicture];
+                NSData *imageData = [[NSData alloc] initWithContentsOfURL:urlImage];
+                [ad setAdImage:[[UIImage alloc] initWithData:imageData]];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showLoader:NO];
+                readyToAd = YES;
+                [self rotateAds];
+            });
+        });
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
