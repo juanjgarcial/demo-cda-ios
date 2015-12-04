@@ -24,9 +24,9 @@ static bool readyToAd = NO;
 static bool showSites = NO;
 static NSCache *cacheManager;
 
-static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
+//static NSString *SERVICE_URL = @"http://localhost:8084/DemoCDA/resources/demo/";
 //static NSString *SERVICE_URL = @"http://192.168.0.104:8084/DemoCDA/resources/demo/";
-//static NSString *SERVICE_URL = @"http://190.216.251.147:8080/DemoCDA-1.0/resources/demo/";
+static NSString *SERVICE_URL = @"http://190.216.251.147:8080/DemoCDA-1.0/resources/demo/";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
